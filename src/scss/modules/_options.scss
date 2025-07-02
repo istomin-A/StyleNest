@@ -1,0 +1,63 @@
+@use 'tools' as *;
+
+// =======================================================================================================
+// * Глобальные настройки
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    font-size: fluid(18, 14);
+    line-height: 150%;
+    color: var(--color-grey-40);
+    background: var(--color-white);
+
+    &._lock {
+        overflow: hidden;
+    }
+
+    // press footer
+    .page {
+        flex: 1 1 auto;
+        // fix slider
+        min-width: 0;
+    }
+}
+
+._mobile-hidden {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+a._color-grey {
+    transition: color 0.3s ease 0s;
+
+    @include hover {
+        color: var(--color-grey-15);
+    }
+}
+
+// =======================================================================================================
+// * Утилитарные классы
+
+// сontainer
+._container {
+    max-width: calc(var(--container) + var(--container-padding-x) * 2);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-x);
+}
+
+// visually-hidden
+._visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}

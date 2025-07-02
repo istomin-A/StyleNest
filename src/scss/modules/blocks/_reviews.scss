@@ -1,0 +1,9 @@
+@use '../tools' as *;
+
+.reviews {
+    padding-block: fluid(50, 20);
+
+    &__body {}
+
+    &__text {}
+}

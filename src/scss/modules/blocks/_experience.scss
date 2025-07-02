@@ -1,0 +1,47 @@
+@use '../tools' as *;
+
+.experience {
+    padding-block: fluid(50, 20);
+
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(20);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(10);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        display: grid;
+        gap: rem(10);
+
+        @include tablet {
+            grid-template-columns: auto 1fr;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        gap: rem(10);
+    }
+
+    &__cout {
+        font-weight: 600;
+        font-size: fluid(80, 50);
+        color: var(--color-white-95);
+        line-height: 125%;
+    }
+
+    &__title {
+        font-weight: 600;
+        color: var(--color-grey-20);
+        font-size: fluid(20, 16);
+    }
+}

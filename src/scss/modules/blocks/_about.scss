@@ -1,0 +1,41 @@
+@use '../tools' as *;
+
+.about {
+    padding-block: fluid(50, 20);
+
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(20);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(10);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        display: grid;
+        gap: fluid(20, 16);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: fluid(16, 8);
+    }
+
+    &__back {}
+
+    &__icon {
+        width: fluid(24, 20);
+    }
+
+    &__title {}
+
+    &__text {}
+}

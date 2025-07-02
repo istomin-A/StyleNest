@@ -1,0 +1,29 @@
+@use '../tools' as *;
+
+.noUi-connect {
+    background: var(--color-grey-30) !important;
+}
+
+.noUi-connects {
+    background: var(--color-grey-70);
+}
+
+.noUi-horizontal .noUi-handle {
+    width: rem(25) !important;
+    height: rem(25) !important;
+    right: rem(-12) !important;
+    top: rem(-5) !important;
+}
+
+.noUi-handle {
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    background: var(--color-grey-10) !important;
+    box-shadow: none !important;
+    border: none !important;
+
+    &::before,
+    &::after {
+        display: none !important;
+    }
+}

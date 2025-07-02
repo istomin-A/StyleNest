@@ -1,0 +1,34 @@
+@use '../tools' as *;
+
+.button-alt-actions {
+    @include square(rem(52));
+    @include flex-center(true);
+
+    border-radius: 50%;
+    background: var(--color-yellow-50);
+    transition: background 0.3s ease 0s;
+
+    @include hover {
+        background: var(--color-yellow-70);
+    }
+
+    @include laptop {
+        @include square(rem(44));
+    }
+
+    &__icon {
+        @include square(rem(24));
+
+        fill: var(--color-grey-15);
+        pointer-events: none;
+
+        @include laptop {
+            @include square(rem(20));
+        }
+
+        &_search {
+            stroke: var(--color-grey-15);
+            fill: transparent;
+        }
+    }
+}

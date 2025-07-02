@@ -1,0 +1,83 @@
+@use '../tools' as *;
+
+
+.main-slider {
+    background: var(--color-white-97) !important;
+    border: rem(2) solid var(--color-white-95) !important;
+    border-radius: fluid(20, 14) !important;
+
+    @include tablet-above {
+        padding-inline: rem(20) !important;
+    }
+
+    @include tablet {
+        padding: rem(0) rem(0) rem(50) rem(0) !important;
+    }
+
+    &_no-padding {
+        height: 100% !important;
+
+        @include tablet-above {
+            padding: rem(0) rem(0) rem(0) rem(0) !important;
+        }
+
+        @include tablet {
+            padding: rem(0) rem(0) rem(0) rem(0) !important;
+        }
+    }
+
+    &__swiper {}
+
+    &__slide {
+        height: auto !important;
+        padding: rem(20) rem(20) rem(20) rem(20) !important;
+        background: var(--color-white-97) !important;
+
+        @include tablet {
+            padding: rem(10) rem(10) rem(20) rem(10) !important;
+        }
+    }
+
+    &__arrow {
+        width: fluid(55, 40) !important;
+        height: fluid(55, 40) !important;
+        background: var(--color-grey-15) !important;
+        border-radius: 50%;
+        color: var(--color-white) !important;
+        transition: background 0.3s ease 0s, color 0.3s ease 0s;
+
+        &::after {
+            font-size: rem(20) !important;
+        }
+
+        @include tablet {
+            top: 85% !important;
+        }
+
+        &_bottom {
+            @include tablet {
+                top: 94% !important;
+            }
+        }
+    }
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+.swiper-button-prev {
+    left: rem(5) !important;
+}
+
+.swiper-button-next {
+    right: rem(5) !important;
+}
+
+.swiper-button-disabled {
+    background: var(--color-white) !important;
+    color: var(--color-grey-15) !important;
+    border: rem(2) solid var(--color-grey-70);
+}

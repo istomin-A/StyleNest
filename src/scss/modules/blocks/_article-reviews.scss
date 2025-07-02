@@ -1,0 +1,48 @@
+@use '../tools' as *;
+
+.article-reviews {
+    display: grid;
+    gap: fluid(30, 10);
+    border-radius: fluid(20, 14);
+    border: rem(2) solid var(--color-white-95);
+    padding: fluid(30, 10);
+    background: var(--color-white);
+    height: 100%;
+
+    &__body {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: rem(10);
+    }
+
+    &__image {
+        width: fluid(70, 40);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: fluid(22, 16);
+        color: var(--color-grey-15);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+    }
+
+    &__icon {
+        width: fluid(20, 16);
+    }
+
+    &__comma {
+        width: fluid(60, 30);
+    }
+}

@@ -1,0 +1,93 @@
+@use '../tools' as *;
+
+.form {
+    position: relative;
+
+    @include mobile {
+        padding-inline: rem(15);
+    }
+
+    &_flex {
+        display: flex;
+        align-items: center;
+        gap: fluid(12, 8);
+    }
+
+    &_absolute {
+        @include hide;
+
+        min-width: fluid(400, 200);
+        position: absolute;
+        top: prc(60, 52);
+        right: 0;
+        z-index: 10;
+        transition: opacity 0.3s ease 0s;
+
+        &._active {
+            @include show;
+        }
+
+        @include mobile {
+            @include show;
+
+            position: absolute;
+            top: 3%;
+            left: 0;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border: rem(1.5) solid var(--color-white-95);
+        border-radius: rem(32);
+        background: var(--color-white-99);
+        min-height: rem(60);
+        padding: rem(0) fluid(50, 40) rem(0) rem(20);
+        font-weight: 500;
+        font-size: fluid(18, 14);
+        color: var(--color-grey-60);
+        line-height: 150%;
+
+        @include laptop {
+            min-height: rem(50);
+        }
+    }
+
+    &__button {
+        @include flex-center(true);
+
+        &_absolute {
+            height: 100%;
+            padding-inline: rem(15);
+            background: transparent;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            translate: 0 -50%;
+            z-index: 5;
+
+            @include hover {
+                .form__icon {
+                    stroke: var(--color-grey-40);
+                }
+            }
+
+            @include mobile {
+                right: rem(15)
+            }
+        }
+    }
+
+    &__icon {
+        @include square(rem(24));
+
+        fill: transparent;
+        stroke: var(--color-grey-15);
+        pointer-events: none;
+        transition: stroke 0.3s ease 0s;
+
+        @include laptop {
+            @include square(rem(20));
+        }
+    }
+}

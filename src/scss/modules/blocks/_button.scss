@@ -1,0 +1,53 @@
+@use '../tools' as *;
+
+.button {
+    display: inline-block;
+    background: var(--color-yellow-50);
+    border-radius: fluid(32, 22);
+    padding: fluid(18, 14) fluid(30, 22);
+    font-weight: 600;
+    font-size: fluid(18, 14);
+    color: var(--color-grey-15);
+    line-height: 150%;
+    text-transform: uppercase;
+    transition: background 0.3s ease 0s, color 0.3s ease 0s;
+
+    @include hover {
+        color: var(--color-grey-20);
+        background: var(--color-yellow-70);
+    }
+
+    &_black {
+        background: var(--color-grey-15);
+        color: var(--color-white);
+        padding: fluid(15, 14) fluid(30, 22);
+
+        @include hover {
+            color: var(--color-white);
+            background: var(--color-grey-30);
+        }
+    }
+
+    &_icon {
+        display: inline-flex;
+        align-items: center;
+        gap: rem(7);
+    }
+
+    &__icon {
+        @include square(fluid(24, 18));
+
+        rotate: 45deg;
+        fill: var(--color-white);
+    }
+
+    &__icon-shop {
+        @include square(fluid(24, 20));
+
+        fill: var(--color-grey-15);
+
+        &_white {
+            fill: var(--color-white);
+        }
+    }
+}

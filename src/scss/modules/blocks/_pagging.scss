@@ -1,0 +1,56 @@
+@use '../tools' as *;
+
+.pagging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(7);
+
+    &__button {
+        align-self: stretch;
+        background: var(--color-white-100);
+        border: rem(2) solid var(--color-grey-70);
+        border-radius: rem(4);
+        padding-inline: rem(15);
+        font-size: rem(20);
+
+        @include hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__prev {}
+
+    &__next {}
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(7);
+    }
+
+    &__item {
+        @include flex-center;
+
+        max-width: rem(45);
+        width: 100%;
+        background: var(--color-white-100);
+        border: rem(2) solid var(--color-grey-70);
+        border-radius: rem(4);
+
+        @include hover {
+            opacity: 0.7;
+        }
+
+        &_active {
+            background: var(--color-grey-70);
+            border: rem(2) solid var(--color-grey-40);
+            pointer-events: none;
+        }
+    }
+
+    &__link {
+        padding: rem(5) rem(17);
+        color: var(--color-grey-15);
+    }
+}

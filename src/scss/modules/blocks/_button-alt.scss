@@ -1,0 +1,47 @@
+@use '../tools' as *;
+
+.button-alt {
+    border-radius: rem(100);
+    border: rem(1.5) solid var(--color-white-95);
+    font-weight: 500;
+    padding: rem(14) rem(28);
+    color: var(--color-grey-40);
+    transition: color 0.3s ease 0s, background 0.3s ease 0s;
+
+    @include hover {
+        background: var(--color-white-97);
+        color: var(--color-grey-20);
+    }
+
+    @include laptop {
+        padding: rem(12) rem(18);
+        border-radius: rem(80);
+    }
+
+    &_burger {
+        @include mobile {
+            font-size: rem(18);
+        }
+    }
+
+    &_tablet-none {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &._active {
+        background: var(--color-white-97);
+        color: var(--color-grey-15);
+    }
+
+    &_flex-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: rem(7);
+    }
+
+    &__icon {
+        @include square(fluid(24, 18));
+    }
+}

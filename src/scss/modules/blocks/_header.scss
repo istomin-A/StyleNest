@@ -1,0 +1,143 @@
+// * import index file
+@use '../tools' as *;
+// =======================================================================================================
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__promo {
+        padding-block: rem(20);
+        background: var(--color-grey-10);
+        transition: padding-block 0.3s ease 0s;
+
+        @include laptop {
+            padding-block: rem(14);
+        }
+
+        &._scroll {
+            padding-block: rem(10);
+        }
+    }
+
+    &__promo-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(10);
+    }
+
+    &__text-white {
+        color: var(--color-white);
+        transition: color 0.3s ease 0s;
+
+        @include hover {
+            color: var(--color-grey-70);
+        }
+    }
+
+    &__promo-icon {
+        @include square(rem(24));
+
+        flex-shrink: 0;
+        fill: var(--color-white);
+
+        @include laptop {
+            @include square(rem(20));
+        }
+    }
+
+    &__logo {
+        @include mobile-above {
+            justify-self: center;
+        }
+
+        &_mobile-visible {
+            display: none;
+
+            @include mobile {
+                display: inline-block;
+            }
+        }
+
+        &_mobile-hide {
+
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+    &__wrapper-burger {
+        @include mobile-above {
+            display: contents;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            gap: rem(20);
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            transition: right 0.3s ease 0s;
+            padding: rem(180) rem(0) rem(0) rem(0);
+            background-color: var(--color-white);
+
+            &._active {
+                right: 0;
+            }
+        }
+    }
+
+    &__main {
+        padding-block: fluid(20, 10);
+        background: var(--color-white-99);
+        border-bottom: rem(2) solid var(--color-white-95);
+
+        &._scroll {
+            box-shadow: 0 rem(8) rem(10) rem(-7) var(--color-grey-10);
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: rem(15);
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__wrapper {
+        @include mobile-above {
+            position: relative;
+        }
+
+        @include mobile {
+            order: 2;
+        }
+    }
+
+    &__inner {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: rem(14);
+
+        @include laptop {
+            gap: rem(10);
+        }
+
+        @include mobile {
+            flex-direction: column;
+            justify-self: center;
+        }
+    }
+}

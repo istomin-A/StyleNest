@@ -1,0 +1,124 @@
+@use '../tools' as *;
+
+.filter-catalog {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    background: var(--color-white-95);
+    padding: rem(20) rem(15);
+    border-radius: rem(10);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+    }
+
+    &__spoller {}
+
+    &__main-title {
+        font-size: fluid(24, 18);
+        text-transform: uppercase;
+        text-align: center;
+        background: var(--color-white);
+        padding: rem(10) rem(15);
+        border-radius: rem(10);
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(15);
+        background: var(--color-grey-70);
+        padding: rem(10) rem(15);
+        border-radius: rem(5);
+    }
+
+    &__text {
+        font-size: fluid(20, 16);
+        color: var(--color-white-95);
+        font-weight: 500;
+    }
+
+    &__spoller-icon {
+        @include square(rem(20));
+
+        position: relative;
+
+        &::before,
+        &::after {
+            @include abs-center;
+
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: rem(2);
+            background: var(--color-white);
+        }
+
+        &::after {
+            rotate: 90deg;
+            transition: rotate 0.3s ease 0s;
+        }
+
+        &._active {
+
+            &::after {
+                rotate: 0deg;
+            }
+        }
+    }
+
+    &__spoller-inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+        padding: rem(10) rem(10) rem(10) rem(15);
+        background: var(--color-white);
+        border-bottom-left-radius: rem(10);
+        border-bottom-right-radius: rem(10);
+
+        &_padding-more {
+            padding: fluid(40, 20) rem(10) rem(10) rem(15);
+        }
+    }
+
+    &__spoller-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: rem(10);
+        padding: rem(10) rem(0) rem(10) rem(15);
+        background: var(--color-white);
+        border-bottom-left-radius: rem(10);
+        border-bottom-right-radius: rem(10);
+    }
+
+    &__inputs {
+        display: flex;
+        align-items: center;
+        gap: rem(16);
+    }
+
+    &__input {
+        flex: 0 1 50%;
+        width: 50%;
+        border-radius: rem(10);
+        border: rem(2) solid var(--color-grey-40);
+        min-height: rem(46);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: part(20, 16);
+        color: var(--color-grey-40);
+        padding: rem(10);
+        text-align: center;
+    }
+
+    &__line {
+        font-size: rem(16);
+        line-height: part(20, 16);
+        color: var(--color-grey-10);
+    }
+}

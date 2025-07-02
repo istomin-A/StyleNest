@@ -1,0 +1,104 @@
+// * import index file
+@use '../tools' as *;
+// ===================================================================
+
+.footer {
+    padding: fluid(50, 20) rem(0) rem(0) rem(0);
+
+    &__main {
+        border-top: rem(2) solid var(--color-white-95);
+        border-bottom: rem(2) solid var(--color-white-95);
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: fluid(40, 20);
+        padding: fluid(60, 20);
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: rem(15);
+        border-left: rem(2) solid var(--color-white-95);
+        padding: fluid(60, 20);
+
+        @include tablet {
+            border-left: 0;
+            border-top: rem(2) solid var(--color-white-95);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(15);
+    }
+
+    &__copy {
+        padding-block: fluid(30, 15);
+    }
+
+    &__wrapper {}
+
+    &__title {
+        font-weight: 500;
+        color: var(--color-grey-15);
+        font-size: fluid(20, 18);
+        margin: rem(0) rem(0) fluid(20, 14) rem(0);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+    }
+
+    &__item {}
+
+    &__link {
+        color: inherit;
+    }
+
+    &__copy-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(15);
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+    }
+
+    &__text {
+        color: inherit;
+
+        &_border {
+            padding: rem(0) rem(0) rem(0) fluid(20, 10);
+            border-left: rem(2) solid var(--color-white-95);
+        }
+    }
+}

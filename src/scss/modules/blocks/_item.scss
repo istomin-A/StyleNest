@@ -1,0 +1,8 @@
+@use '../tools' as *;
+
+.item {
+    padding: fluid(30, 15);
+    background: var(--color-white);
+    border: rem(2) solid var(--color-white-95);
+    border-radius: fluid(20, 14);
+}

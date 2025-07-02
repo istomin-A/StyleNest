@@ -1,0 +1,12 @@
+@use '../tools' as *;
+
+.error-text {
+    font-weight: 600;
+    font-size: fluid(50, 25);
+    text-align: center;
+    line-height: 150%;
+
+    &_small {
+        font-size: rem(16);
+    }
+}

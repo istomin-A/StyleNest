@@ -1,0 +1,75 @@
+@use '../tools' as *;
+
+.spoller {
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(10);
+        background: var(--color-white-99);
+        border: rem(2) solid var(--color-white-95);
+        padding: fluid(20, 10);
+        border-radius: fluid(18, 14);
+        transition: border-radius 0.3s ease 0s, border 0.3s ease 0s;
+
+        &._active {
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &__button-text {
+        display: inline-block;
+        font-weight: 500;
+        color: var(--color-grey-15);
+        font-size: fluid(18, 16);
+    }
+
+    &__icon {
+        @include square(fluid(22, 16));
+
+        flex-shrink: 0;
+        display: inline-block;
+        position: relative;
+        transition: rotate 0.3s ease 0s;
+
+        &::before {
+            @include abs-center;
+
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: rem(2);
+            background: var(--color-grey-30);
+        }
+
+        &::after {
+            @include abs-center;
+
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: rem(2);
+            background: var(--color-grey-30);
+            rotate: 90deg;
+        }
+
+        &._active {
+            rotate: 45deg;
+        }
+    }
+
+    &__body {}
+
+    &__inner {
+        background: var(--color-white-99);
+        border-bottom: rem(2) solid var(--color-white-95);
+        border-right: rem(2) solid var(--color-white-95);
+        border-left: rem(2) solid var(--color-white-95);
+        border-bottom-left-radius: fluid(18, 14);
+        border-bottom-right-radius: fluid(18, 14);
+        padding: 0 fluid(20, 10) fluid(20, 10) fluid(20, 10);
+    }
+}

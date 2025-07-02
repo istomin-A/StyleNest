@@ -1,0 +1,96 @@
+@use '../tools' as *;
+
+.contact {
+    padding-block: fluid(50, 20);
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: rem(10);
+
+        &:not(:last-child) {
+            margin: rem(0) auto fluid(40, 20) auto;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: rem(10);
+        border: rem(2) solid var(--color-white-95);
+        border-radius: fluid(20, 14);
+        padding: fluid(30, 15);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            justify-items: stretch;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        @include mobile-above {
+            &:not(:last-child) {
+                border-right: rem(2) solid var(--color-white-95);
+                padding: rem(0) rem(25) rem(0) rem(0);
+            }
+        }
+
+        @include mobile {
+            &:not(:last-child) {
+                border-bottom: rem(2) solid var(--color-white-95);
+                padding: rem(0) rem(0) rem(10) rem(0);
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+
+        &:not(:last-child) {
+            margin: rem(0) rem(0) rem(15) rem(0);
+        }
+    }
+
+    &__link {
+        color: var(--color-grey-10);
+        font-weight: 500;
+        font-size: fluid(20, 16);
+        transition: color 0.3s ease 0s;
+
+        @include hover {
+            color: var(--color-grey-40);
+        }
+    }
+
+    &__item-title {
+        font-weight: 600;
+        font-size: fluid(22, 16);
+        color: var(--color-grey-15);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        padding: fluid(20, 3) rem(0) rem(0) rem(0);
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+}

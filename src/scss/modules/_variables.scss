@@ -1,0 +1,26 @@
+@use 'tools' as *;
+
+:root {
+    --color-white: #fefefe;
+
+    --color-yellow-50: #FFD400;
+    --color-yellow-70: #FFE566;
+
+    --color-white-95: #F1F1F3;
+    --color-white-97: #F7F7F8;
+    --color-white-99: #FCFCFD;
+    --color-white-100: #f0f0f0;
+
+    --color-grey-10: #1A1A1A;
+    --color-grey-15: #262626;
+    --color-grey-20: #333333;
+    --color-grey-30: #4C4C4D;
+    --color-grey-40: #656567;
+    --color-grey-60: #98989A;
+    --color-grey-70: #B3B3B3;
+
+    --font-family-main: 'Manrope', sans-serif;
+
+    --container: #{rem(1600)};
+    --container-padding-x: #{rem(15)};
+}

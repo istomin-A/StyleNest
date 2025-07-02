@@ -1,0 +1,44 @@
+@use '../tools' as *;
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: fluid(20, 14);
+
+    &__item {}
+
+    &__link {
+        @include flex-center(true);
+        @include square(fluid(44, 34));
+
+        position: relative;
+
+        &::before {
+            @include square(fluid(44, 34));
+
+            content: '';
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--color-grey-15);
+        }
+
+        @include hover {
+            .social__icon {
+                fill: var(--color-grey-70);
+            }
+        }
+    }
+
+    &__icon {
+        @include square(fluid(20, 18));
+
+        fill: var(--color-white);
+        position: relative;
+        z-index: 5;
+        pointer-events: none;
+        transition: fill 0.3s ease 0s;
+    }
+}

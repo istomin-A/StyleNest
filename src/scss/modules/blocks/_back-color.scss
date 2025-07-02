@@ -1,0 +1,12 @@
+@use '../tools' as *;
+
+.back-color {
+    background: var(--color-white-97);
+    border: rem(2) solid var(--color-white-95);
+    border-radius: fluid(20, 14);
+    padding: fluid(30, 7);
+
+    &_padding-less {
+        padding: fluid(20, 7);
+    }
+}

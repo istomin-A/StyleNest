@@ -1,0 +1,103 @@
+@use '../tools' as *;
+
+.product {
+    display: grid;
+    gap: rem(12);
+    height: 100%;
+
+    &__button {
+        text-align: center;
+
+        &_width-max {
+            width: 100%;
+        }
+    }
+
+    &__inner {
+        @include flex-center;
+
+        background: #fff;
+        border-radius: fluid(20, 16);
+
+        &:not(:last-child) {
+            margin: rem(0) rem(0) fluid(20, 10) rem(0);
+        }
+
+        &_margin-null {
+            &:not(:last-child) {
+                margin: rem(0) rem(0) rem(0) rem(0);
+            }
+        }
+    }
+
+    &__image {
+        width: fluid(377, 200);
+
+        &_big {
+            width: fluid(430, 253);
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: fluid(20, 16);
+        color: var(--color-grey-15);
+
+        a {
+            color: inherit;
+            transition: color 0.3s ease 0s;
+
+            @include hover {
+                color: var(--color-grey-40);
+            }
+        }
+    }
+
+    &__price {
+        font-weight: 500;
+    }
+
+    &__wrapper {
+        position: absolute;
+        bottom: rem(30);
+        left: rem(30);
+        width: calc(100% - rem(60));
+        display: grid;
+        align-items: center;
+        gap: rem(10);
+        grid-template-columns: 1fr auto;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        font-weight: 500;
+        color: var(--color-grey-30);
+        background: var(--color-white-95);
+        padding: fluid(8, 5) fluid(14, 10);
+        transition: color 0.3s ease 0s;
+        text-transform: uppercase;
+        border-radius: rem(20);
+
+        &_pos-top {
+            position: absolute;
+            top: rem(30);
+            left: rem(30);
+        }
+
+        &_link {
+            height: 100%;
+
+            @include hover {
+                color: var(--color-grey-10);
+            }
+        }
+    }
+
+    &__icon {
+        @include square(rem(18));
+
+        rotate: 45deg;
+    }
+}

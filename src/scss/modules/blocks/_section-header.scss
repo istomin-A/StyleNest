@@ -1,0 +1,63 @@
+@use '../tools' as *;
+
+.section-header {
+    display: grid;
+    gap: fluid(24, 15);
+
+    &:not(:last-child) {
+        margin: rem(0) auto fluid(50, 15) auto;
+    }
+
+    &_contact {
+
+        &:not(:last-child) {
+            margin: rem(0) rem(0) rem(0) rem(0);
+        }
+
+        @include tablet {
+            justify-self: center;
+        }
+    }
+
+    &_button {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            justify-items: start;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+    }
+
+    &__inner {
+        display: flex;
+        gap: rem(5);
+
+        @include mobile {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        color: var(--color-grey-10);
+        font-size: fluid(48, 28);
+        line-height: 150%;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: fluid(18, 14);
+        color: var(--color-grey-60);
+    }
+
+    &__text {
+        max-width: rem(1250);
+    }
+}

@@ -1,0 +1,21 @@
+@use '../tools' as *;
+
+.faq {
+    padding-block: fluid(50, 20);
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: fluid(20, 14);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: fluid(15, 10);
+    }
+}

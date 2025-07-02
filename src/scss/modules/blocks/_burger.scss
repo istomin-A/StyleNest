@@ -1,0 +1,65 @@
+@use '../tools' as *;
+
+.burger {
+    @include square(rem(34));
+
+    display: none;
+    justify-self: end;
+    padding: rem(8) rem(4);
+    position: relative;
+    z-index: 5;
+    background-color: transparent;
+
+    &::before {
+        // Увеличена область нажатия
+        @include abs-center;
+        @include square(rem(44));
+
+        content: '';
+    }
+
+    &._active {
+        & {
+            position: absolute;
+            top: rem(102);
+        }
+
+        .burger__line {
+            &:first-child {
+                rotate: 45deg;
+                transform-origin: 0;
+                translate: 0.25em -0.1em;
+            }
+
+            &:nth-child(2) {
+                rotate: -45deg;
+            }
+
+            &:last-child {
+                width: 0;
+            }
+        }
+    }
+
+    // @include hover{
+    //      hover effect
+    // }
+
+    @include mobile {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__line {
+        width: 100%;
+        height: rem(2);
+        background: var(--color-grey-15);
+        transition-duration: .3s;
+
+        &:last-child {
+            align-self: flex-end;
+            width: 50%;
+        }
+    }
+}

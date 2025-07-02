@@ -1,0 +1,70 @@
+// * Базовые стили
+@use 'modules/reset';
+@use 'modules/variables';
+@use 'modules/fonts';
+@use 'modules/options';
+
+// =======================================================================================================
+// * Подключение базовых стилей
+// @use 'modules/base/modal';
+@use 'modules/base/checkbox';
+@use 'modules/base/radio';
+@use 'modules/base/quantity';
+// @use 'modules/base/select';
+
+// * Подключение БЕМ блоков
+@use 'modules/blocks/button-alt-actions';
+@use 'modules/blocks/button-alt';
+@use 'modules/blocks/button';
+
+@use 'modules/blocks/menu';
+
+@use 'modules/blocks/error-text';
+
+@use 'modules/blocks/social';
+
+@use 'modules/blocks/logo';
+
+@use 'modules/blocks/alt-form';
+@use 'modules/blocks/form';
+
+@use 'modules/blocks/burger';
+@use 'modules/blocks/header';
+
+@use 'modules/blocks/main-slider';
+@use 'modules/blocks/range-slider';
+@use 'modules/blocks/product-slider';
+
+@use 'modules/blocks/product';
+@use 'modules/blocks/article-reviews';
+
+@use 'modules/blocks/intro';
+
+@use 'modules/blocks/section-header';
+
+@use 'modules/blocks/back-color';
+@use 'modules/blocks/item';
+
+@use 'modules/blocks/spoller';
+
+@use 'modules/blocks/reviews';
+
+@use 'modules/blocks/faq';
+
+@use 'modules/blocks/experience';
+
+@use 'modules/blocks/about';
+
+@use 'modules/blocks/contact';
+
+@use 'modules/blocks/footer';
+
+@use 'modules/blocks/product-page';
+
+@use 'modules/blocks/catalog';
+
+@use 'modules/blocks/breadbcrumbs';
+
+@use 'modules/blocks/filter';
+
+@use 'modules/blocks/pagging';

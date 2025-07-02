@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html {
+    /*Пригодится в большинстве ситуаций (когда, например, нужно будет "прижать" футер к низу сайта)*/
+    height: 100%;
+    /*Убираем скачок интерфейса по горизонтали при появлении / исчезновении скроллбара*/
+    scrollbar-gutter: stable;
+}
+
+body {
+    /*Пригодится в большинстве ситуаций (когда, например, нужно будет "прижать" футер к низу сайта*/
+    min-height: 100%;
+
+    line-height: 1;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// плавное закрытие споллера (слабая поддержка)
+// details::details-content{
+//     content-visibility: visible !important;
+// }
+
+summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+/* Убираем стрелки в Chrome, Edge, Safari */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Убираем стрелки в Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

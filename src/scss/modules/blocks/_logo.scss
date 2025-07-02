@@ -1,0 +1,13 @@
+@use '../tools' as *;
+
+.logo {
+
+    &__image {
+        width: fluid(60, 35);
+
+        &_big {
+            flex-shrink: 0;
+            width: fluid(100, 40);
+        }
+    }
+}

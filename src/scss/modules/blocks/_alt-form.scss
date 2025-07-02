@@ -1,0 +1,20 @@
+@use '../tools' as *;
+
+legend {
+    font-weight: 500;
+    color: var(--color-grey-15);
+    margin: rem(0) rem(0) rem(5) rem(0);
+}
+
+label {
+    display: inline-block;
+}
+
+.alt-form {
+
+    &__inner {
+        display: inline-flex;
+        align-items: center;
+        gap: rem(10);
+    }
+}

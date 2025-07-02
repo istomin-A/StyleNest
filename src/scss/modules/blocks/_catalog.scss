@@ -1,0 +1,29 @@
+@use '../tools' as *;
+
+.catalog {
+    padding-block: fluid(80, 30);
+
+    &__body {
+        display: grid;
+        grid-template-columns: rem(300) 1fr;
+        gap: rem(20);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
+        gap: rem(20);
+
+        &:not(:last-child) {
+            margin: rem(0) rem(0) rem(20) rem(0);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+        }
+    }
+}

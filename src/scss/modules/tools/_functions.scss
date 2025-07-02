@@ -1,0 +1,46 @@
+@use 'sass:math';
+
+// Функции для перевода из px в rem, em, %, part`s
+// rem
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+
+// em
+@function em($px, $value) {
+    $result: math.div($px, $value) + em;
+    @return $result;
+}
+
+// prc (%)
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+
+// part
+@function part($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo);
+    @return $result;
+}
+
+// =======================================================================================================
+// Адаптивное свойство
+
+@function fluid($max: 100, $min: 10) {
+    $maxViewportWidth: 1920;
+    $minViewportWidth: 390;
+
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
+
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+    @return clamp(#{$minSize * 1rem},
+        #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+        #{$maxSize * 1rem});
+}

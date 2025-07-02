@@ -1,0 +1,87 @@
+@use '../tools' as *;
+
+// * Базовые стили для radio-buttons
+._radio-real {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    &:checked+._radio-custom::before {
+        scale: 1;
+    }
+
+    &:focus+._radio-custom {
+        box-shadow: 0px 0px 0px rem(1) #2F2F51, 0px 0px rem(10) #2F2F51;
+    }
+}
+
+._radio-custom {
+    @include square(fluid(34, 28));
+
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+        @include abs-center;
+
+        scale: 0;
+        content: '';
+        display: inline-block;
+        width: rem(20);
+        height: rem(20);
+        background: url(../img/check.svg);
+        transition: scale 0.3s ease 0s;
+    }
+
+    &_black {
+        background: var(--color-grey-15);
+    }
+
+    &_tan {
+        background: #DAA573;
+    }
+
+    &_light-green {
+        background: #DAD673;
+    }
+
+    &_yellow {
+        background: var(--color-yellow-50);
+    }
+
+    &_grey {
+        background: var(--color-grey-40);
+    }
+}
+
+._radio-size-real {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    &:checked+._radio-size-custom {
+        background: var(--color-grey-15);
+        color: var(--color-white);
+    }
+
+    &:focus+._radio-size-custom {
+        box-shadow: 0px 0px 0px rem(1) #2F2F51, 0px 0px rem(10) #2F2F51;
+    }
+}
+
+._radio-size-custom {
+    @include square(fluid(45, 35));
+    @include flex-center(true);
+
+    border-radius: rem(4);
+    position: relative;
+    background: var(--color-white-100);
+    border: rem(2) solid var(--color-grey-70);
+    color: var(--color-grey-15);
+    transition: background 0.5s ease 0s, color 0.5s ease 0s;
+}

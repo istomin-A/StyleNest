@@ -1,0 +1,94 @@
+@use '../tools' as *;
+
+.intro {
+    padding: fluid(100, 20) rem(0) fluid(50, 20) rem(0);
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: fluid(30, 15);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+
+        &_column {
+
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(10);
+            }
+        }
+    }
+
+    &__info {}
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+
+        &_titles {
+            &:not(:last-child) {
+                margin: rem(0) rem(0) fluid(24, 10) rem(0);
+            }
+
+            @include tablet {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+        }
+
+        &_buttons {
+            &:not(:last-child) {
+                margin: rem(0) rem(0) fluid(40, 20) rem(0);
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: fluid(48, 28);
+        color: var(--color-grey-10);
+        line-height: 150%;
+    }
+
+    &__subtitle {
+        flex-shrink: 0;
+        align-self: flex-start;
+        font-weight: 600;
+        color: var(--color-grey-60);
+    }
+
+    &__item-title {
+        color: var(--color-grey-10);
+        font-weight: 600;
+        font-size: fluid(34, 20);
+        line-height: 150%;
+    }
+
+    &__text {
+        &:not(:last-child) {
+            margin: rem(0) rem(0) fluid(20, 10) rem(0);
+        }
+    }
+
+    &__button {}
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+    }
+
+    &__slider {
+        @include tablet-above {
+            max-width: fluid(785, 300);
+        }
+
+        @include tablet {
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+}

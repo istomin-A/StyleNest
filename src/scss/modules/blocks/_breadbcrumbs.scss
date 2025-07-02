@@ -1,0 +1,38 @@
+@use '../tools' as *;
+
+.breadbcrumbs {
+    &:not(:last-child) {
+        margin: rem(0) auto fluid(20, 10) auto;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+    }
+
+    &__item {
+        font-size: fluid(18, 16);
+
+        &_arrow {
+            display: flex;
+            align-items: center;
+            gap: rem(5);
+        }
+    }
+
+    &__link {
+        color: var(--color-grey-10);
+        transition: color 0.3s ease 0s;
+
+        @include hover {
+            color: var(--color-grey-70);
+        }
+    }
+
+    &__arrow {}
+
+    &__current {
+        color: var(--color-yellow-50);
+    }
+}
