@@ -1,5 +1,4 @@
-import SliderCollection from "./Slider.js"
-import spritePath from './../../img/sprite/sprite.svg';
+import SliderCollection from './Slider.js'
 
 class RenderIntroSlider {
     apiUrl = 'https://dummyjson.com/products'
@@ -28,12 +27,7 @@ class RenderIntroSlider {
                         <div class="product__info product__info_pos-top">Best Seller</div>
                         <div class="product__wrapper">
                             <a href="#" class="product__button product__button_width-max button">Add To Cart</a>
-                            <a href="#" class="product__info product__info_link">
-                                View Similar
-                                <svg class="product__icon">
-                                    <use xlink:href="${spritePath}#arrow"></use>
-                                </svg>
-                            </a>
+                            <a href="#" class="product__info product__info_link">View Similar</a>
                         </div>
                     </article>
                 </div>`
