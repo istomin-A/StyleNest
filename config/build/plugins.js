@@ -50,7 +50,6 @@ export function plugins(options) {
                                 speed: 2,
                                 strip: true,
                             }],
-                            ['imagemin-svgo'],
                         ],
                     },
                 },
