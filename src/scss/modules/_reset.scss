@@ -65,9 +65,17 @@ video {
 //     content-visibility: visible !important;
 // }
 
-summary {
-    list-style: none;
+details summary {
+    list-style: none; // отключение стрелочки во всех браузерах
     cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    display: none; // отключение стрелочки в safari
+}
+
+details summary::marker {
+    display: none; // отключение стрелочки в Firefox и новые стандарты
 }
 
 /* Убираем стрелки в Chrome, Edge, Safari */
