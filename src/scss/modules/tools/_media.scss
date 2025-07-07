@@ -6,49 +6,49 @@ $mobile: 767.98;
 $mobile-small: 479.98;
 
 @mixin laptop-above {
-    @media (width > em($laptop, 16)) {
+    @media (min-width: em($laptop, 16)) {
         @content;
     }
 }
 
 @mixin laptop {
-    @media (width <= em($laptop, 16)) {
+    @media (max-width: em($laptop, 16)) {
         @content;
     }
 }
 
 @mixin tablet-above {
-    @media (width > em($tablet, 16)) {
+    @media (min-width: em($tablet, 16)) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (width <= em($tablet, 16)) {
+    @media (max-width: em($tablet, 16)) {
         @content;
     }
 }
 
 @mixin mobile-above {
-    @media (width > em($mobile, 16)) {
+    @media (min-width: em($mobile, 16)) {
         @content;
     }
 }
 
 @mixin mobile {
-    @media (width <= em($mobile, 16)) {
+    @media (max-width: em($mobile, 16)) {
         @content;
     }
 }
 
 @mixin mobile-small-above {
-    @media (width > em($mobile-small, 16)) {
+    @media (min-width: em($mobile-small, 16)) {
         @content;
     }
 }
 
 @mixin mobile-small {
-    @media (width <= em($mobile-small, 16)) {
+    @media (max-width: em($mobile-small, 16)) {
         @content;
     }
 }
@@ -60,7 +60,7 @@ $mobile-small: 479.98;
         }
     }
 
-    @if ($hasActiveEffect){
+    @if ($hasActiveEffect) {
         @media (any-hover: none) {
             &:active {
                 @content;
